@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Join Page</title>
+    <link rel="stylesheet" href="CSS/join.css">
+</head>
+<body>  <!-- form 태그는 쓰지 않도록 한다!!! -->
+    <section>
+        <div class="join__box">
+            <div class="join__title">소중한 추억을<br/>영원히 간직해보세요.</div>
+
+            <table>
+                <tr>
+                    <td colspan="2" class="join__sub__title">아이디</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="username__input" type="text" placeholder="아이디" id="user_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="join__sub__title">비밀번호</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="password__input" type="password" placeholder="비밀번호" id="user_pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="join__sub__title">이메일</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="email__input" type="email" placeholder="Email" id="user_email">
+                    </td>
+                </tr>
+            </table>
+            <div class="join__button" id="btn_join">
+                <button>회원가입</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="Javascript/join.js"></script>
+</html>

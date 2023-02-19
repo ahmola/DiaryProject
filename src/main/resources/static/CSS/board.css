@@ -1,0 +1,44 @@
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #f3f3f3;
+      }
+      .header nav{
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      .header h1 {
+        margin: 5px;
+      }
+      .header a {
+        color: #333;
+        text-decoration: none;
+      }
+      .header input[type="text"] {
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        width: 200px;
+      }
+      .header button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        float: right;
+      }
+      .posts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .posts img{
+        margin: 10px 0;
+        width: 30%;
+        padding: 10px;
+      }
