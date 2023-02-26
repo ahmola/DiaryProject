@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.DTO.RequestBoardIdDTO;
 import com.example.demo.DTO.ResponseBoardIdDTO;
 import com.example.demo.DTO.ResponseUsernameDTO;
 import com.example.demo.model.RoleType;
@@ -78,17 +79,32 @@ public class ApiController {
     }
 
     @PostMapping("/userPost/findBoard")
-    public ResponseBoardIdDTO findBoard(@RequestBody @NotNull String boardId){
-        System.out.println("findBoard 요청 : " + boardId);
+    public ResponseBoardIdDTO findBoard(@RequestBody @NotNull RequestBoardIdDTO request){
+        System.out.println("findBoard 요청 : " + request.getUsername());
+        int finder = 1;
+        int search = 1;
+        board userBoard = null;
 
-        int id = Integer.parseInt(boardId);
+        while(finder <= request.getBoardId()) {
+            userBoard = BoardService.findById(search).get(0);
+            if(request.getBoardId() == 1 && userBoard.getWriter().getUsername().equals(request.getUsername()))
+                break;
 
-        board userBoard = BoardService.findById(id).get(0);
-
-        if(userBoard != null){
-            return new ResponseBoardIdDTO(HttpStatus.OK.value(), userBoard.getTitle(), userBoard.getSummary());
+            if (userBoard.getWriter().getUsername().equals(request.getUsername())) {
+                finder++;
+            }
+            search++;
         }
+        int userId = UserService.findByUsername(request.getUsername()).get(0).getId();
 
-        return new ResponseBoardIdDTO(HttpStatus.FORBIDDEN.value(), userBoard.getTitle(), userBoard.getSummary());
+        if(userBoard.getWriter().getId() == userId){
+            System.out.println("유저 게시글 확인");
+            return new ResponseBoardIdDTO(HttpStatus.OK.value(), userBoard.getId(), userBoard.getTitle(), userBoard.getSummary());
+        }
+        else{
+            System.out.println("해당 유저가 쓴 글이 아닙니다.");
+        }
+        return new ResponseBoardIdDTO(HttpStatus.FORBIDDEN.value(), userBoard.getId(), userBoard.getTitle(), userBoard.getSummary());
+
     }
 }

@@ -44,16 +44,22 @@ let board = {
             $("#writing_button").on("click", ()=>{
                 location.href = "/posting";
             })
+
+            $("#logout_button").on("click", ()=>{
+                localStorage.clear();
+                location.href = "/";
+            })
     },
 
     userImage:function(){
         const post = document.getElementById("posts");
         const user = JSON.parse(localStorage.getItem("data")).username;
+        var rand = Math.random() * 200;
         for(var i = 0; i < 10; i++){
             var img = document.createElement("img");
             img.setAttribute("class", "post");
             img.setAttribute("id", "post");
-            img.setAttribute("src", "https://picsum.photos/200/200");
+            img.setAttribute("src", "https://picsum.photos/seed/" + (i+rand) + "/200/200");
             img.setAttribute("alt", "Post Image");
             img.setAttribute("onclick", "javascript:window.open('userPost', 'userPost' ,'top=100, left=500, width=500, height=600, status=no, toolbar=no'); localStorage.setItem('clickedBoard', " + (i+1) + ");");
             // localStorage.setItem("board"+(i+1), JSON.stringify(i+1));

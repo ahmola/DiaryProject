@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-position: 0% 100%;
+    background-image: url("../background_trip.webp");
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+.postSection{
+    width: 200px;
+    display: inline-block;
+    background-color: white;
+    padding: 20px 30px;
+    position: relative;
+    top: 80px;
+    left: 150px;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgb(214, 214, 214);
+}

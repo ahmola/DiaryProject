@@ -30,4 +30,9 @@ public class BoardController {
     public String userPost(){
         return "Web/userPost.html";
     }
+
+    @GetMapping("/help")
+    public String help(){
+        return "Web/help.html";
+    }
 }

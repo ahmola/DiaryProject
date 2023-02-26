@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-position: 0% 200%;
+    background-image: url("../background_trip.webp");
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+.posting_diary{
+        width: 430px;
+        display: inline-block;
+        background-color: white;
+        padding: 20px 5px;
+        position: relative;
+        top: 80px;
+        left: 170px;
+        border-radius: 6px;
+        box-shadow: 0 2px 2px 0 rgb(214, 214, 214);
+}
+.post_button{
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        float: right;
+}

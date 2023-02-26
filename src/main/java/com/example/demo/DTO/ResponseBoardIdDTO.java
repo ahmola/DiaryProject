@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 public class ResponseBoardIdDTO {
 
     int status;
+    int id;
     String title;
     @Lob
     String summary;
