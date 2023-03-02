@@ -39,9 +39,14 @@ let userPost = {
         //const img = getElementById("postImg");
         const summary = document.getElementById("postSummary");
 
-        title.innerHTML = resp.title;
+        title.innerHTML = resp.title + "<br><br>";
 
-        summary.innerHTML = resp.summary;
+        for(var i = 0; i <= resp.summary.length/10; i++){
+            var line = document.createElement("div");
+            line.setAttribute("id", "line"+i);
+            line.innerHTML = resp.summary.substr(i, i+10);
+            summary.appendChild(line);
+        }
     }
 }
 
