@@ -3,6 +3,6 @@
  
  Springboot Security,
  
- running server on RaspberryPi with Nginx,
+ image upload,
  
- styling and some edits are needed(done).
+ running server on RaspberryPi with Nginx are needed
